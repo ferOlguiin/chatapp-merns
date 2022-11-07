@@ -1,0 +1,15 @@
+1- Agregar imagenes al modelo de usuarios.{{HECHA}}
+
+2- pintar todos los usuarios en section amigos pero el usuario q ingrese no tiene q estar. y agregar la section de amigos y todos{{HECHA}}
+
+3- integrar el socket io para permitir el envio de los mensajes{{HECHA}}
+
+4- armar todas las funciones de obtencion, creado, editado y borrado de mensajes.
+
+5- ver como hacer q otro pueda ver el mensaje q le mande y tambien q tenga notificiacion
+
+6- integrar el "agregar como amigo" 
+
+7- ARMAR EL REGISTRO DE USUARIOS
+
+8- buscar la manera para que al momento de crear el usuario no permita registrar otra vez el mismo mail o nickname
