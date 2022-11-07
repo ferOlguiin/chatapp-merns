@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export const UserPanel = () => {
 
-    const socket = io('http://localhost:4000');
+    const socket = io();
     const {user} = useUser();
 
     useEffect(() => {
