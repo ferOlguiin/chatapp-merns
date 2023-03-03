@@ -3,6 +3,10 @@ import { borrarImagen, subirImagen } from "../cloudinary/cloudinary.js";
 import Chats from "../models/Chats.js"
 import Users from "../models/Users.js";
 
+//INICIO
+export const welcome = (req, res) => {
+    return res.send("Bienvenido, conectado al puerto: " + PORT);
+}
 
 //FUNCIONES PARA CHATS
 

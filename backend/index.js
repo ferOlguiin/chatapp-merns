@@ -6,30 +6,25 @@ import {Server as SocketServer} from 'socket.io';
 import http from 'http';
 import cors from 'cors';
 import Users from './models/Users.js';
-import {dirname, join} from 'path';
-import {fileURLToPath} from 'url';
 
 const app = express();
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //MIDDLEWARES
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: true}));
 
+app.use((req, res, next) => {
+    console.log(`Path ${req.path} with Method ${req.method}`);
+    next();
+});
 
 
 //ROUTES
 app.use(router);
-app.use(express.static(join(__dirname, '../client/build')));
 
-app.get("*", (req, res) => {
-    res.sendFile(join(__dirname, '../client/build/index.html'))
-})
-
-
+//db
 conectarDB();
-
 
 //SOCKET IO
 
@@ -37,7 +32,6 @@ const server = http.createServer(app)
 const io = new SocketServer(server, {
     cors: {}
 });
-
 
 
 io.on('connection', (socket) => {

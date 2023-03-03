@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { crearChat, crearUsuario, editarChat, editarUsuario, eliminarChat, eliminarUsuario, obtenerChat, obtenerTodosLosUsuarios, obtenerUnUsuario, obtenerUsuario } from "../controllers/routes.controllers.js";
+import { crearChat, crearUsuario, editarChat, editarUsuario, eliminarChat, eliminarUsuario, obtenerChat, obtenerTodosLosUsuarios, obtenerUnUsuario, obtenerUsuario, welcome } from "../controllers/routes.controllers.js";
 import fileUpload from "express-fileupload";
 
 const router = Router();
+
+//Inicio
+router.get("/", welcome);
 
 //rutas de chats
 router.post("/chat", obtenerChat);
