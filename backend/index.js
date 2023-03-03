@@ -12,7 +12,7 @@ const app = express();
 //MIDDLEWARES
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: true}));
 
 app.use((req, res, next) => {
     console.log(`Path ${req.path} with Method ${req.method}`);
