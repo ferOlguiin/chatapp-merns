@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export const UserPanel = () => {
 
-    const socket = io();
+    const socket = io("https://chat-app-backend-pi0h.onrender.com");
     const {user} = useUser();
 
     useEffect(() => {
